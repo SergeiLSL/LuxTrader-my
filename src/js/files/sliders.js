@@ -37,12 +37,12 @@ function initSliders() {
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
-			autoHeight: true,
+			//autoHeight: true,  // отключить чтобы высота слайда былы одинаковая
 			speed: 800,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
-			loop: true,
+			loop: true, // повторение слайдов по кругу
 			//preloadImages: false,
 			//lazy: true,
 
@@ -78,31 +78,38 @@ function initSliders() {
 			},
 
 			// Брейкпоинты
-			/*
+
 			breakpoints: {
 				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
+					// slidesPerView: 1,
+					// spaceBetween: 0,
 					autoHeight: true,
 				},
 				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
+					autoHeight: false,
+					// slidesPerView: 2,
+					// spaceBetween: 20,
 				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
+				// 992: {
+				// 	slidesPerView: 3,
+				// 	spaceBetween: 20,
+				// },
+				// 1268: {
+				// 	slidesPerView: 4,
+				// 	spaceBetween: 30,
+				// },
 			},
-			*/
+
 			// События
 			on: {
-
+				lazyImageReady: function lazyImageReady() {
+					ibg();
+				}
 			}
+			// And if we need scrollbar
+			//scrollbar: {
+			//	el: '.swiper-scrollbar',
+			//},
 		});
 	}
 }

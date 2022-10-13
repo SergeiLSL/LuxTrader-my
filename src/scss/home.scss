@@ -8,8 +8,13 @@
 
 .gallery {
 	position: relative;
+	 // чтобы высота слайда былы одинаковая
 	.swiper-wrapper {
 		align-items: stretch;
+		// убираем резиновость колонок
+		@media (max-width:$mobile){
+			align-items: flex-start;
+		}
 	}
 	// .gallery__slider
 	&__slider {
@@ -49,7 +54,7 @@
 .swiper-slide {
 	text-align: center;
 	padding: rem(30) 0 rem(100) 0;
-	@include adaptiveValue("padding-bottom", 100, 50);
+	// @include adaptiveValue("padding-bottom", 100, 50);
 	position: relative;
 	// .swiper-slide__content
 	&__content {
@@ -81,8 +86,8 @@
 	}
 	// .swiper-slide__btn
 	&__btn {
-		// margin: rem(55) 0 0 0;
-		@include adaptiveValue("margin-top", 50, 30);
+		margin: rem(55) 0 0 0;
+		//@include adaptiveValue("margin-top", 50, 50);
 	}
 }
 
