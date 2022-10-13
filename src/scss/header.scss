@@ -1,0 +1,322 @@
+//====================================================================================================
+.header {
+	background-color: $mainColorBlock;
+	position: relative;
+	z-index: 50;
+	// .header__container
+	&__container {
+		position: relative;
+		display: flex;
+		align-items: center;
+		height: rem(75);
+		@media (max-width: $mobile) {
+			justify-content: space-between;
+		}
+	}
+	// .header__logo
+	&__logo {
+		position: relative;
+		z-index: 2;
+		width: rem(144);
+		@media (max-width: $mobile) {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	// .header__menu
+	&__menu {
+	}
+	// .header__actions
+	&__actions {
+	}
+}
+
+.menu {
+	// padding: 0 0 0 math.div(30px, 950px);
+	//padding: 0 0 0 math.div(rem(30), rem(950));
+	@include adaptiveValue("padding-left", 30, 10);
+	flex: 1 1 auto;
+	@media (max-width: $mobile) {
+		flex: 0 0 auto;
+	}
+	// .menu__icon
+	&__icon {
+	}
+	// .menu__body
+	&__body {
+		@media (max-width: $mobile) {
+			//display: none;
+			background-color: rgba(28, 36, 42, 0.98);
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			overflow: auto; // чтобы скролилось меню при маленьком экране
+			padding: rem(130) 0 rem(20) 0;
+			opacity: 0; // opacity: 0;
+			visibility: hidden; //visibility: hidden;
+			transition: all 0.3s ease 0s;
+			text-align: center;
+			&:after {
+				content: "";
+				background-color: $mainColorBlock;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: rem(75);
+			}
+			&.menu-open {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		justify-content: center;
+		li {
+			margin: 0 rem(15);
+		}
+		@media (max-width: $mobile) {
+			display: block;
+			// text-align: center;
+			li {
+				margin: 0 0 rem(30) 0;
+				&:last-child {
+					margin: 0 0 0 0;
+				}
+			}
+		}
+	}
+	// .menu__link
+	&__link {
+		font-family: "PFDin";
+		font-size: rem(14);
+		line-height: math.div(21, 14);
+		text-transform: uppercase;
+		letter-spacing: 0.1em; //letter-spacing: 1.4px;
+		color: #fff;
+		@media (min-width: $tablet) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(20);
+		}
+	}
+}
+
+.icon-menu {
+	@media (max-width: $mobile) {
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #bb9c66;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		&.menu-open {
+			span {
+				width: 0;
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+.actions-header {
+	display: flex;
+	align-items: center;
+	padding: 0 0 0 rem(30);
+	// .actions-header__region
+	&__region {
+		position: relative;
+		z-index: 2;		
+		@extend .menu__link; // подключаем все, что есть в .menu__link
+		padding: 0 0 0 rem(30);
+		line-height: rem(18);
+		background: url("@img/header/globe.png") left no-repeat;
+		min-width: rem(18);
+		min-height: rem(18);
+		@media (max-width: em(895)) {
+			padding: 0;
+			span {
+				// убираем текст при ширине 895px
+				display: none;
+			}
+		}
+		// time 1:15:50 переносим "Выбор региона" в выпадающее меню бургера
+		// Подключаем из app.js Динамический адаптив import "./libs/dynamic_adapt.js";
+		// не хочет переносится 
+		@media (max-width:$mobile){
+			margin-top: rem(30);
+			display: inline-block;
+			padding: 0 0 0 rem(30);
+			span {
+				// убираем текст при ширине 895px
+				display: inline-block;
+			}
+		}
+	}
+	// .actions-header__user
+	&__user {
+		margin: 0 0 0 rem(30);
+		// при ширине 890px убираем надпись "Выбираем регион"
+		// оставляем только глобус
+		@media (max-width: em(895)) {
+			margin: 0 0 0 rem(15); // уменьшаем отступ
+		}
+	}
+}
+
+.user-header {
+	// .user-header__icon
+	&__icon {
+		position: relative;
+		z-index: 2;
+		cursor: pointer;
+	}
+	// .user-header__menu
+	&__menu {
+		// в файле script.js подключение работы иконки
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease 0s;
+		top: rem(88);
+		right: 0;
+		position: absolute;
+		background: $mainColorBlock;
+		padding: rem(20);
+		min-width: rem(176);
+		li {
+			margin: 0 0 rem(8) 0;
+			&:last-child {
+				margin: 0 0 0 0;
+			}
+		}
+		@media (max-width: $mobile) {
+			width: 100%;
+		}
+		// в файле script.js подлключение работы иконки
+		// при активной иконке, т.е создание класса _active
+		&._active {
+			top: rem(78);
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	// .user-header__link
+	&__link {
+		color: #fff;
+		padding: 0 0 0 rem(30);
+		display: inline-block;
+		line-height: rem(18);
+		// .user-header__link_1
+		&_1 {
+			background: url("@img/header/01.png") 1px center no-repeat;
+		}
+		// .user-header__link_2
+		&_2 {
+			background: url("@img/header/02.png") left center no-repeat;
+		}
+		// .user-header__link_3
+		&_3 {
+			background: url("@img/header/03.png") 4px center no-repeat;
+		}
+		// .user-header__link_4
+		&_4 {
+			background: url("@img/header/04.png") left center no-repeat;
+		}
+		@media (min-width: $tablet) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+//========================
+
+
+//====================================================================================================
+
+//Burger
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		&.menu-open {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/

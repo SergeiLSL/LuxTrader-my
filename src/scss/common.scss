@@ -1,0 +1,121 @@
+// Заголовки, общие БЄМ блоки и проче...
+.none {
+	display: none;
+}
+
+// ======================================================================================================================================================================================================================
+// класс .title, который будет применяться в других блоках
+.title {
+	text-align: center;
+	// .title__item
+	&__item {
+		font-family: "Ceremonious";
+		font-size: rem(40);		
+		color: #bb9c66;
+		// margin: 0 0 math.div(20px, 40px) * 1em 0;
+		margin-bottom: rem(23);
+	}
+	// .title__main
+	&__main {
+		font-family: "PFDin";
+		font-size: rem(35);
+		@include adaptiveValue("font-size", 35, 26);
+		line-height: math.div(40, 35);
+		text-transform: uppercase;
+		// letter-spacing: 0.15em;
+		letter-spacing: rem(5.25);
+		font-weight: 500;
+		// .title__main_w
+		&_w {
+			color: #ffffff;
+		}
+		// .title__main_regular
+		&_regular {
+			font-weight: 400;
+		}
+	}
+}
+//========================================================================================================================================================
+//========================================================================================================================================================
+.btn {
+	position: relative;
+	display: inline-block;
+	&:before,
+	&::after {
+		position: absolute;
+		left: 0;
+		height: rem(3);
+		width: 100%;
+		content: "";
+	}
+	&::before {
+		// верхняя граница рамки кнопки
+		top: 0;
+		background-color: #c3a774;
+	}
+	&::after {
+		// нижняя граница рамки кнопки
+		bottom: 0;
+		background-color: #8f6630;
+	}
+	// .btn__body
+	&__body {
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: rem(3);
+			background-image: linear-gradient(to top, #8f6630, #c3a774);
+		}
+		&::before {
+			left: 0%;
+		}
+		&::after {
+			right: 0;
+		}
+		span {
+			min-height: rem(50);
+			color: #fff;
+			font-size: rem(15);
+			font-family: "PFDin";
+			letter-spacing: rem(2);
+			text-transform: uppercase;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0 rem(50);
+			position: relative;
+			&::after {
+				content: "";
+				height: rem(50);
+				transition: all 0.5s ease 0s;
+				opacity: 0.06;
+				// background-image: -webkit-gradient(linear, left bottom, left top, from(#bb9c66), to(rgba(187, 156, 102, 0)));
+				// background-image: -o-linear-gradient(bottom, #bb9c66 0%, rgba(187, 156, 102, 0) 100%);
+				background-image: linear-gradient(to top, #bb9c66 0%, rgba(187, 156, 102, 0) 100%);
+				top: 0;
+				left: 0;
+				position: absolute;
+				width: 100%;
+			}
+		}
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			.btn__body span {
+				&::after {
+					opacity: 0.3;
+					height: 100%;
+				}
+			}
+		}
+	}
+	&._fw {
+		width: 100%;
+	}
+}
+//========================================================================================================================================================
+//========================================================================================================================================================
