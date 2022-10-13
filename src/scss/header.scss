@@ -166,7 +166,7 @@
 		@extend .menu__link; // подключаем все, что есть в .menu__link
 		padding: 0 0 0 rem(30);
 		line-height: rem(18);
-		background: url("@img/header/globe.png") left no-repeat;
+		background: url("@img/icons/globe.png") left no-repeat;
 		min-width: rem(18);
 		min-height: rem(18);
 		@media (max-width: em(895)) {
@@ -244,19 +244,19 @@
 		line-height: rem(18);
 		// .user-header__link_1
 		&_1 {
-			background: url("@img/header/01.png") 1px center no-repeat;
+			background: url("@img/icons/menu/01.png") 1px center no-repeat;
 		}
 		// .user-header__link_2
 		&_2 {
-			background: url("@img/header/02.png") left center no-repeat;
+			background: url("@img/icons/menu/02.png") left center no-repeat;
 		}
 		// .user-header__link_3
 		&_3 {
-			background: url("@img/header/03.png") 4px center no-repeat;
+			background: url("@img/icons/menu/03.png") 4px center no-repeat;
 		}
 		// .user-header__link_4
 		&_4 {
-			background: url("@img/header/04.png") left center no-repeat;
+			background: url("@img/icons/menu/04.png") left center no-repeat;
 		}
 		@media (min-width: $tablet) {
 			&:hover {
@@ -265,6 +265,27 @@
 		}
 	}
 }
+
+.webp .actions-header__region{ background: url(@img/icons/globe.webp) left no-repeat; }
+
+.webp .user-header__link_1{ background: url(@img/icons/menu/01.webp) 1px center no-repeat; }
+
+.webp .user-header__link_2{ background: url(@img/icons/menu/02.webp) left center no-repeat; }
+
+.webp .user-header__link_3{ background: url(@img/icons/menu/03.webp) 4px center no-repeat; }
+
+.webp .user-header__link_4{ background: url(@img/icons/menu/04.webp) left center no-repeat; }
+
+.webp .control-main-slider__arrow{ background: url(@img/icons/sl-arrow.webp) 0 0 no-repeat; }
+
+.webp .control-slider-lots__link{ background: url(@img/icons/circle.webp) 0 0 no-repeat; }
+
+.webp .text-categories__body{ background: url(@img/categories/decor.webp) left top repeat-y; }
+
+.webp .text-categories__body:before{ background: url(@img/categories/decor_header.webp) 0 0 no-repeat; }
+
+.webp .form-subscribe__btn span{ background: url(@img/icons/ok-btn.webp) right no-repeat; }
+
 //========================
 
 
