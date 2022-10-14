@@ -4,8 +4,12 @@
 	// .page__gallery
 	&__gallery {
 	}
+		// .page__lots
+		&__lots {
+		}
 }
-
+//========================================================================================================================================================
+// .gallery
 .gallery {
 	position: relative;
 	 // чтобы высота слайда былы одинаковая
@@ -131,3 +135,153 @@
 	}
 }
 //====================================================================================================
+//========================================================================================================================================================
+
+// .lots
+.lots {
+	padding: rem(85) 0 rem(63) 0;
+	@include adaptiveValue("padding-top", 85, 60);
+	// .lots__container
+	&__container {
+	}
+	// .lots__header
+	&__header {
+		margin: 0 0 rem(40) 0;
+	}
+}
+
+// ? все остальное в файле common.scss
+// .block-header {
+// 	// .block-header__title
+// 	&__title {
+// 		margin: 0 0 rem(20) 0 ;
+// 	}
+// 	// .block-header__decor
+// 	&__decor {
+// 	}
+// }
+
+// .block-decor {
+// 	display: flex;
+// 	// align-items: center;
+// 	// .block-decor__items
+// 	&__items {
+// 		flex: 1 1 auto;
+// 		// display: flex;
+// 		// align-items: center;
+// 	}
+// 	// .block-decor__icon
+// 	&__icon {
+// 		text-align: center;
+// 		flex: 0 0 rem(150);
+// 		// ::before {
+// 		// 	content: "";
+// 		// 	height: rem(1);
+// 		// 	flex: 1 1 auto;
+// 		// 	background-color: #bb9c66;
+// 		// }
+// 		// ::after {
+// 		// 	content: "";
+// 		// 	height: rem(18);
+// 		// 	flex: 0 0 rem(18);
+// 		// 	transform: rotate(-45deg);
+// 		// 	margin: 0 rem(5) 0 rem(5);
+// 		// }
+// 		// span {
+// 		// 	display: flex;
+// 		// 	align-items: center;
+// 		// 	margin: 0 rem(5);
+// 		// 	::before {
+// 		// 		content: "";
+// 		// 		height: rem(10);
+// 		// 		width: rem(10);
+// 		// 		flex: 0 0 rem(10);
+// 		// 		border-radius: 50%;
+// 		// 		background-color: #bb9c66;
+// 		// 		border: rem(1) solid #bb9c66;
+// 		// 		margin: 0 rem(5);
+// 		// 	}
+// 		// 	::after {
+// 		// 		content: "";
+// 		// 		height: rem(10.8);
+// 		// 		width: rem(10.8);
+// 		// 		flex: 0 0 rem(10.8);
+// 		// 		border: rem(1) solid #bb9c66;
+// 		// 		transform: rotate(-45deg);
+// 		// 	}
+// 		// }
+// 	}
+// }
+
+.lots {
+
+	// .lots__slider
+
+	&__slider {
+	}
+}
+.slider-lots {
+	// .slider-lots__slider
+	&__slider {
+	}
+	// .slider-lots__wrapper
+	&__wrapper {
+	}
+	// .slider-lots__slide
+	&__slide {
+	}
+	// .slider-lots__control
+	&__control {
+	}
+}
+
+.control-slider-lots {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// .control-slider-lots__arrow
+	&__arrow {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		span {
+			background: url("@img/icons/sl-arrow.svg") 0 0 no-repeat;
+			flex: 0 0 rem(108);
+			width: rem(108);
+			height: rem(35);
+		}
+		// .control-slider-lots__arrow_prev
+		&::after {
+				content: "";
+				margin: 0 rem(5);
+				width: rem(15);
+				height: rem(15);
+				border-radius: 50%;
+				border: rem(1) solid #bb9c66;
+		}
+		&:last-child {
+			flex-direction: row-reverse;
+			span {
+				transform: rotate(-180deg);
+			}
+		}	
+		// .control-slider-lots__arrow_next
+		&_next {
+		}
+	}
+	// .control-slider-lots__link
+	&__link {
+		background: url("@img/icons/circle.png") 0 0 no-repeat;
+		flex: 0 0 rem(100);
+		// width: rem(100);
+		height: rem(100);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: rem(21);
+		color: #000;
+		font-weight: 500;
+		font-family: "PFDin";
+		margin: 0 rem(20);
+	}
+}

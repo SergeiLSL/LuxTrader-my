@@ -9,7 +9,7 @@
 		@@include('html/_header.htm',{})
 		<main class="page">
 
-			<section class="page__gallery gallery none">
+			<section class="page__gallery gallery">
 				<div class="gallery__slider swiper">
 					<div class="gallery__wrapper swiper-wrapper">
 						<div class="gallery__slide swiper-slide">
@@ -22,10 +22,11 @@
 									</div>
 									<div class="swiper-slide__text">
 										<p>
-										Мы собираем эксклюзивную публику и экслюзивные лоты, даем удобный и
-										автоматизированный сервис по покупке и продаже, а также выставлению
-										лотов на аукцион, предоставляем личные кабинеты, а также оказываем сопутствубщие
-										услуги с продажей редких и дорогих вещей
+											Мы собираем эксклюзивную публику и экслюзивные лоты, даем удобный и
+											автоматизированный сервис по покупке и продаже, а также выставлению
+											лотов на аукцион, предоставляем личные кабинеты, а также оказываем
+											сопутствубщие
+											услуги с продажей редких и дорогих вещей
 										</p>
 									</div>
 									<a href="" class="swiper-slide__btn btn"><span
@@ -51,13 +52,15 @@
 										<p>
 											Мы собираем эксклюзивную публику и экслюзивные лоты, даем удобный и
 											автоматизированный сервис по покупке и продаже, а также выставлению
-											лотов на аукцион, предоставляем личные кабинеты, а также оказываем сопутствубщие
+											лотов на аукцион, предоставляем личные кабинеты, а также оказываем
+											сопутствубщие
 											услуги с продажей редких и дорогих вещей
 										</p>
 										<p>
 											Мы собираем эксклюзивную публику и экслюзивные лоты, даем удобный и
 											автоматизированный сервис по покупке и продаже, а также выставлению
-											лотов на аукцион, предоставляем личные кабинеты, а также оказываем сопутствубщие
+											лотов на аукцион, предоставляем личные кабинеты, а также оказываем
+											сопутствубщие
 											услуги с продажей редких и дорогих вещей
 										</p>
 									</div>
@@ -97,6 +100,7 @@
 							<h2 class="title__main">лоты Под аукцион</h2>
 						</div>
 						<div class="block-header__decor block-decor">
+							<!--? все нижеследующее проще сделать картинками svg. Это как вариант  -->
 							<div class="block-decor__items">
 								<span></span>
 							</div>
@@ -111,7 +115,38 @@
 							</div>
 						</div>
 					</div>
+
 					<div class="lots__slider slider-lots">
+						<div class="slider-lots__slider swiper">
+							<div class="slider-lots__wrapper swiper-wrapper">
+								<div class="slider-lots__slide swiper-slide">
+									<img src="@img/lots/01.jpg" alt="">
+								</div>
+								<div class="slider-lots__slide swiper-slide">
+									<img src="@img/lots/01.jpg" alt="">
+								</div>								<div class="slider-lots__slide swiper-slide">
+									<img src="@img/lots/01.jpg" alt="">
+								</div>
+								<div class="slider-lots__slide swiper-slide">
+									<img src="@img/lots/01.jpg" alt="">
+								</div>								<div class="slider-lots__slide swiper-slide">
+									<img src="@img/lots/01.jpg" alt="">
+								</div>
+							</div>
+						</div>
+
+						<div class="slider-lots__control control-slider-lots">
+							<div class="control-slider-lots__arrow control-slider-lots__arrow_prev">
+								<span></span>
+							</div>
+							<a href="" class="control-slider-lots__link">Все лоты</a>
+							<div class="control-slider-lots__arrow control-slider-lots__arrow_next">
+								<span></span>
+							</div>
+						</div>						
+					</div>
+
+					<div class="lots__slider slider-lots none">
 						<div class="slider-lots__body _swiper">
 							<div class="slider-lots__slide">
 								<div class="lot">

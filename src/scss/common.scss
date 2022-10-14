@@ -24,7 +24,7 @@ p:not(:last-child) {
 	&__main {
 		font-family: "PFDin";
 		font-size: rem(35);
-		@include adaptiveValue("font-size", 35, 26);
+		@include adaptiveValue("font-size", 35, 28);
 		line-height: math.div(40, 35);
 		text-transform: uppercase;
 		// letter-spacing: 0.15em;
@@ -121,6 +121,84 @@ p:not(:last-child) {
 	}
 	&._fw {
 		width: 100%;
+	}
+}
+//========================================================================================================================================================
+//========================================================================================================================================================
+.block-header {
+	// .block-header__title
+	&__title {
+		margin: 0 0 rem(20) 0 ;
+	}
+	// .block-header__decor
+	&__decor {
+	}
+}
+
+.block-decor {
+	display: flex;
+	align-items: center;
+	// .block-decor__items
+	&__items {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+		&::before {
+			content: "";
+			height: rem(1);
+			width: 100%;
+			flex: 1 1 auto;
+			background-color: #bb9c66;
+		}
+		&::after {
+			content: "";
+			height: calc(rem(25) * 0.72);
+			width: calc(rem(25) * 0.72);
+			flex: 0 0 25px * 0.72;
+			transform: rotate(-45deg);
+			border: rem(1) solid #bb9c66;
+			margin: 0 rem(5) 0 rem(5);
+		}
+		span {
+			display: flex;
+			align-items: center;
+			margin: 0 rem(5);
+			&::before {
+				content: "";
+				height: rem(10);
+				width: rem(10);
+				flex: 0 0 rem(10);
+				border-radius: 50%;
+				border: rem(1) solid #bb9c66;
+				margin: 0 rem(5);
+			}
+			&::after {
+				content: "";
+				height: calc(rem(15) * 0.72);
+				width: calc(rem(15) * 0.72);
+				flex: 0 0 15px * 0.72;
+				border: rem(1) solid #bb9c66;
+				transform: rotate(-45deg);
+			}
+
+		}
+		&:last-child {
+			flex-direction: row-reverse;
+			span {
+				flex-direction: row-reverse;
+			}
+		}
+	}
+	// .block-decor__icon
+	&__icon {
+		text-align: center;
+		flex: 0 0 rem(150);
+		img {
+			max-width: rem(70);
+		}
+		@media (max-width:$mobile){
+			flex: 0 0 rem(95);  
+		}
 	}
 }
 //========================================================================================================================================================
