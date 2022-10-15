@@ -88,7 +88,7 @@ p:not(:last-child) {
 			font-family: "PFDin";
 			letter-spacing: rem(2);
 			text-transform: uppercase;
-			display: inline-flex;
+			display: flex;
 			justify-content: center;
 			align-items: center;
 			padding: 0 rem(50);
@@ -113,6 +113,7 @@ p:not(:last-child) {
 			font-size: rem(21);
 			color: #000000;
 			letter-spacing: 0;
+			padding: 0 rem(10);
 			font-weight: 500;
 		}
 	}
@@ -211,6 +212,10 @@ p:not(:last-child) {
 //========================================================================================================================================================
 // .lot
 .lot {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	text-align: center;
 	// .lot__header
 	&__header {
 		text-align: center;
@@ -219,26 +224,37 @@ p:not(:last-child) {
 	}
 	// .lot__image-ibg
 	&__image {
-		height: rem(250);
 		display: block;
+		border: rem(3) solid #bb9c66;
+		padding: 0 0 98% 0;
 	}
 	// .lot__timer
 	&__timer {
 	}
 	// .lot__title
 	&__title {
-		font-size: rem(21);
+		// font-size: rem(21);
+		@include adaptiveValue("font-size", 21, 18);
 		line-height: math.div( 25, 21);
 		font-weight: 500;
 		color: #000000;
-		font-family: "PFDin";
-		text-decoration: uppercase;
+		font-family: 'PFDin';
+		text-transform: uppercase;
+		flex: 1 1 auto;
+		z-index: 2;
+		margin: 0 0 rem(27) 0;
+		@media (min-width:$tablet){
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 	// .lot__info
 	&__info {
 	}
 	// .lot__btn
 	&__btn {
+		margin: 0 rem(25);
 	}
 }
 
@@ -251,7 +267,7 @@ p:not(:last-child) {
 	align-items: center;
 	flex-direction: column;
 	padding-top: rem(2);
-	background-color: #ffffff;
+	// background-color: #ffffff;
 	position: absolute;
 	left: 50%;
 	bottom: 0;
@@ -282,26 +298,86 @@ p:not(:last-child) {
 
 //========================================================================================================================================================
 .info-lot {
+	display: flex;
+	justify-content: center;
+	margin-bottom: rem(35);
 	// .info-lot__statistic
 	&__statistic {
+		flex: 0 0 rem(50);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 	// .info-lot__icon
 	&__icon {
+		width: rem(18); // 25px * 0.72
+		height: rem(18);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		margin-bottom: rem(10);
+		img {
+			position: relative;
+			z-index: 2;
+		}
+		&::after{
+			content:'';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			transform: rotate(-45deg);
+			background-color: #000;
+		}
 	}
 	// .info-lot__value
 	&__value {
+		font-size: rem(14);
+		padding-bottom: rem(5);
+		width: rem(50);
+		border-bottom: rem(1) solid #bb9c66;
 	}
 	// .info-lot__current-bet
 	&__current-bet {
+		flex: 1 1 auto;
+		@media (max-width:$tablet){
+			flex: 0 0 auto;
+		}
 	}
 }
 
 .current-bet-info-lot {
+	padding: 0 rem(5);
+	position: relative;
+	@media (max-width:$tablet){
+		padding: 0 rem(10);
+	}
+	&::after{
+		content:'';
+		position: absolute;
+		width: rem(72);
+		height: rem(72);
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) rotate(-45deg);
+		border: 1px solid #bb9c66;
+		z-index: -1;
+	}
+	div {
+		position: relative;
+		z-index: 2;
+	}
 	// .current-bet-info-lot__label
 	&__label {
+		margin-bottom: rem(5);
+		//line-height: math.div(25, 14);
 	}
 	// .current-bet-info-lot__value
 	&__value {
+		font-family: 'BravoRG';
+		// font-size: rem(50);
+		white-space: nowrap;
+		@include adaptiveValue("font-size", 50, 35);
 	}
 	// .current-bet-info-lot__currency
 	&__currency {
