@@ -164,17 +164,22 @@ function initSliders() {
 
 			// Брейкпоинты
 
-			// breakpoints: {
-			// 	320: {
-			// 		// slidesPerView: 1,
-			// 		// spaceBetween: 0,
-			// 		autoHeight: true,
-			// 	},
-				// 768: {
-				// 	autoHeight: false,
-					// slidesPerView: 2,
-					// spaceBetween: 20,
-				// },
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					// spaceBetween: 0,
+					//autoHeight: true,
+				},
+				550: {
+					slidesPerView: 2,
+					// spaceBetween: 0,
+					//autoHeight: true,
+				},
+				768: {
+					// autoHeight: false,
+					slidesPerView: 3,
+					//spaceBetween: 20,
+				},
 				// 992: {
 				// 	slidesPerView: 3,
 				// 	spaceBetween: 20,
@@ -183,7 +188,7 @@ function initSliders() {
 				// 	slidesPerView: 4,
 				// 	spaceBetween: 30,
 				// },
-			// },
+			},
 
 			// События
 			on: {
