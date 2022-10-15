@@ -15,7 +15,7 @@ p:not(:last-child) {
 	// .title__item
 	&__item {
 		font-family: "Ceremonious";
-		font-size: rem(40);		
+		font-size: rem(40);
 		color: #bb9c66;
 		// margin: 0 0 math.div(20px, 40px) * 1em 0;
 		margin-bottom: rem(23);
@@ -108,7 +108,14 @@ p:not(:last-child) {
 			}
 		}
 	}
-
+	&_big {
+		.btn__body span {
+			font-size: rem(21);
+			color: #000000;
+			letter-spacing: 0;
+			font-weight: 500;
+		}
+	}
 	@media (any-hover: hover) {
 		&:hover {
 			.btn__body span {
@@ -128,7 +135,7 @@ p:not(:last-child) {
 .block-header {
 	// .block-header__title
 	&__title {
-		margin: 0 0 rem(20) 0 ;
+		margin: 0 0 rem(20) 0;
 	}
 	// .block-header__decor
 	&__decor {
@@ -180,7 +187,6 @@ p:not(:last-child) {
 				border: rem(1) solid #bb9c66;
 				transform: rotate(-45deg);
 			}
-
 		}
 		&:last-child {
 			flex-direction: row-reverse;
@@ -196,10 +202,110 @@ p:not(:last-child) {
 		img {
 			max-width: rem(70);
 		}
-		@media (max-width:$mobile){
-			flex: 0 0 rem(95);  
+		@media (max-width: $mobile) {
+			flex: 0 0 rem(95);
 		}
 	}
 }
 //========================================================================================================================================================
+//========================================================================================================================================================
+// .lot
+.lot {
+	// .lot__header
+	&__header {
+		text-align: center;
+		margin-bottom: rem(30);
+		position: relative;
+	}
+	// .lot__image-ibg
+	&__image {
+		height: rem(250);
+		display: block;
+	}
+	// .lot__timer
+	&__timer {
+	}
+	// .lot__title
+	&__title {
+		font-size: rem(21);
+		line-height: math.div( 25, 21);
+		font-weight: 500;
+		color: #000000;
+		font-family: "PFDin";
+		text-decoration: uppercase;
+	}
+	// .lot__info
+	&__info {
+	}
+	// .lot__btn
+	&__btn {
+	}
+}
+
+.timer-lot {
+	position: relative;
+	transform: translate(-50%, 50%); // вверх на 50%
+	width: rem(72);
+	height: rem(72);
+	display: inline-flex;
+	align-items: center;
+	flex-direction: column;
+	padding-top: rem(2);
+	background-color: #ffffff;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	div {
+		position: relative;
+		z-index: 2;
+	}
+	&::before {
+		content: "";
+		background-color: #ffffff;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: rotate(-45deg);
+	}
+	// .timer-lot__icon
+	&__icon {
+		margin-bottom: rem(5);
+	}
+	// .timer-lot__item
+	&__item {
+		font-family: "PT Sans Narrow";
+		font-size: rem(18);
+	}
+}
+
+//========================================================================================================================================================
+.info-lot {
+	// .info-lot__statistic
+	&__statistic {
+	}
+	// .info-lot__icon
+	&__icon {
+	}
+	// .info-lot__value
+	&__value {
+	}
+	// .info-lot__current-bet
+	&__current-bet {
+	}
+}
+
+.current-bet-info-lot {
+	// .current-bet-info-lot__label
+	&__label {
+	}
+	// .current-bet-info-lot__value
+	&__value {
+	}
+	// .current-bet-info-lot__currency
+	&__currency {
+	}
+}
+
 //========================================================================================================================================================

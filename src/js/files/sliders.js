@@ -111,7 +111,7 @@ function initSliders() {
 			//	el: '.swiper-scrollbar',
 			//},
 		});
-	}
+	}	
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {
