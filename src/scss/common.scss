@@ -222,7 +222,7 @@ p:not(:last-child) {
 		margin-bottom: rem(30);
 		position: relative;
 	}
-	// .lot__image-ibg
+	// .lot__image -ibg
 	&__image {
 		display: block;
 		border: rem(3) solid #bb9c66;
@@ -235,15 +235,15 @@ p:not(:last-child) {
 	&__title {
 		// font-size: rem(21);
 		@include adaptiveValue("font-size", 21, 18);
-		line-height: math.div( 25, 21);
+		line-height: math.div(25, 21);
 		font-weight: 500;
 		color: #000000;
-		font-family: 'PFDin';
+		font-family: "PFDin";
 		text-transform: uppercase;
 		flex: 1 1 auto;
 		z-index: 2;
 		margin: 0 0 rem(27) 0;
-		@media (min-width:$tablet){
+		@media (min-width: $tablet) {
 			&:hover {
 				text-decoration: underline;
 			}
@@ -321,8 +321,8 @@ p:not(:last-child) {
 			position: relative;
 			z-index: 2;
 		}
-		&::after{
-			content:'';
+		&::after {
+			content: "";
 			width: 100%;
 			height: 100%;
 			position: absolute;
@@ -340,7 +340,7 @@ p:not(:last-child) {
 	// .info-lot__current-bet
 	&__current-bet {
 		flex: 1 1 auto;
-		@media (max-width:$tablet){
+		@media (max-width: $tablet) {
 			flex: 0 0 auto;
 		}
 	}
@@ -349,11 +349,11 @@ p:not(:last-child) {
 .current-bet-info-lot {
 	padding: 0 rem(5);
 	position: relative;
-	@media (max-width:$tablet){
+	@media (max-width: $tablet) {
 		padding: 0 rem(10);
 	}
-	&::after{
-		content:'';
+	&::after {
+		content: "";
 		position: absolute;
 		width: rem(72);
 		height: rem(72);
@@ -374,7 +374,7 @@ p:not(:last-child) {
 	}
 	// .current-bet-info-lot__value
 	&__value {
-		font-family: 'BravoRG';
+		font-family: "BravoRG";
 		// font-size: rem(50);
 		white-space: nowrap;
 		@include adaptiveValue("font-size", 50, 35);
@@ -383,5 +383,72 @@ p:not(:last-child) {
 	&__currency {
 	}
 }
-
+//========================================================================================================================================================
+// .item из секции categories
+.item {
+	position: relative;
+	padding: rem(30) rem(10) rem(40) rem(10);
+	height: rem(250);
+	width: rem(250);
+	border-radius: 50%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	// .item__link
+	&__link {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 5;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+	// .item__icon
+	&__icon {
+		position: relative;
+		z-index: 2;
+		margin: 0 0 rem(22) 0;
+	}
+	// .item__title
+	&__title {
+		letter-spacing: 2.1px;
+		position: relative;
+		z-index: 2;
+		color: #fff;
+		font-size: rem(21);
+		line-height: math.div(25, 21);
+		font-weight: 500;
+		text-transform: uppercase;
+		font-family: "PFDin";
+		flex: 1 1 auto;
+		text-align: center;
+	}
+	// .item__deco
+	&__deco {
+		text-align: center;
+		position: relative;
+		z-index: 2;
+	}
+	// .item__bg
+	&__bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		transition: transform 0.8s ease 0s;
+		&::after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+	}
+}
 //========================================================================================================================================================
