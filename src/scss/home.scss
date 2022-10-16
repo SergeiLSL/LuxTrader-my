@@ -211,7 +211,7 @@
 			width: rem(15);
 			height: rem(15);
 			border-radius: 50%;
-			border: rem(1) solid #bb9c66;
+			border: rem(1) solid $mainColorLine;
 		}
 		&:last-child {
 			flex-direction: row-reverse;
@@ -279,7 +279,7 @@
 			height: rem(17.28);
 			flex: 0 0 rem(17.28);
 			transform: translate(-50%, 0) rotate(-45deg);
-			border: rem(1) solid #bb9c66;
+			border: rem(1) solid $mainColorLine;
 		}
 		&::before {
 			left: 33.333%;
@@ -304,7 +304,7 @@
 		justify-content: center; // выравнивание при 2 и 1 колонки
 		&::before {
 			content: "";
-			background-color: #bb9c66;
+			background-color: $mainColorLine;
 			width: rem(10);
 			height: rem(10);
 			flex: 0 0 rem(10);
@@ -338,7 +338,7 @@
 		align-items: center;
 		&::before {
 			content: "";
-			background-color: #bb9c66;
+			background-color: $mainColorLine;
 			width: rem(1);
 			flex: 1 1 auto;
 		}
@@ -348,7 +348,7 @@
 			height: rem(17.28);
 			flex: 0 0 rem(17.28);
 			transform: rotate(-45deg);
-			border: rem(1) solid #bb9c66;
+			border: rem(1) solid $mainColorLine;
 			margin-top: rem(15);
 		}
 		span {
@@ -358,7 +358,7 @@
 			align-items: center;
 			&::before {
 				content: "";
-				background-color: #bb9c66;
+				background-color: $mainColorLine;
 				width: rem(10);
 				height: rem(10);
 				flex: 0 0 rem(10);
@@ -367,7 +367,7 @@
 			}
 			&::after {
 				content: "";
-				background-color: #bb9c66;
+				background-color: $mainColorLine;
 				width: rem(1);
 				flex: 1 1 auto;
 			}
@@ -413,7 +413,7 @@
 	@include adaptiveValue("padding-top", 60, 40);
 	@include adaptiveValue("padding-bottom", 40, 0);
 
-	background-color: #1c242a;
+	background-color: $mainColorBlock;
 	// .services__container
 	&__container {
 	}
@@ -434,15 +434,150 @@
 		flex: 0 1 33.333%;
 		margin-bottom: rem(60);
 		// max-width: 33.333%; // если нужна кроссбраузерность, для интернет эксплоера
-		@media (max-width:$tablet){
+		@media (max-width: $tablet) {
 			flex: 0 1 50%;
 		}
-		@media (max-width: rem(640)){
+		@media (max-width: rem(640)) {
 			flex: 1 1 100%;
 		}
-
 	}
 	// .services__item
 	&__item {
-	}	
+	}
 }
+
+//========================================================================================================================================================
+//========================================================================================================================================================
+.quotes {
+	padding: rem(64) 0 rem(70) 0;
+	// .quotes__container
+	&__container {
+	}
+	// .quotes__slider
+	&__slider {		
+	}
+}
+
+.slider-quotes {
+	// .slider-quotes__slider
+	&__slider {
+		margin-bottom: rem(20);
+	}
+	// .slider-quotes__wrapper
+	&__wrapper {
+	}
+	// .slider-quotes__slide
+	&__slide {
+		display: flex;
+		align-items: center;
+		text-align: left;
+		padding: 0;
+		opacity: 0 !important;
+		&.swiper-slide-active {
+			opacity: 1 !important;
+		}
+		@media (max-width: rem(570)){
+			flex-direction: column;
+		}
+	}
+	// .slider-quotes__image
+	&__image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0 rem(20);
+		flex: 0 0 33.684%; // 320px / 950px
+		img {
+			max-width: 100%;
+		}
+		@media (max-width: rem(570)){
+			margin-bottom: rem(15);
+		}
+	}
+	// .slider-quotes__content
+	&__content {
+		flex: 0 1 rem(515);
+		@media (max-width: rem(570)){
+			flex: 0 0 auto;
+		}
+	}
+	// .slider-quotes__title
+	&__title {
+		font-size: rem(25);
+		//@include adaptiveValue("font-size", 25, 20);
+		line-height: math.div(30, 25);
+		font-style: italic;		
+		//margin-bottom: rem(31);
+		@include adaptiveValue("margin-bottom", 31, 20);
+		@media (max-width: rem(570)){
+			padding: 0 rem(20);
+		}
+	}
+	// .slider-quotes__info
+	&__info {
+		color: $mainColorBlock;
+		font-size: rem(15);
+		p:not(:last-child) {
+			margin-bottom: rem(7);
+		}
+		@media (max-width: rem(570)){
+			padding: 0 rem(20);
+		}
+	}
+	// .slider-quotes__control
+	&__control {
+	}
+}
+
+.control-slider-quotes {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: rem(400);
+	margin: 0 auto;
+	// .control-slider-quotes__decor
+	&__decor {
+		flex: 0 1 33.333%;
+		display: flex;
+		align-items: center;
+		&::before {
+			content: "";
+			flex: 1 1 auto;
+			height: rem(1);
+			background-color: $mainColorLine;
+		}
+		&::after{
+			content:'';
+			margin: 0 0 0 rem(5);
+			width: rem(10);
+			height: rem(10);
+			border-radius: 50%;
+			border: rem(1) solid $mainColorLine;
+		}
+		&:last-child {
+			flex-direction: row-reverse;
+			&::after{
+				content:'';
+				margin: 0 rem(5) 0 0;
+			}
+		}
+	}
+	// .control-slider-quotes__link
+	&__link {
+		flex: 0 1 33.333%;
+		text-align: center;
+	}
+	// .control-slider-quotes__circle
+	&__circle {
+		display: inline-flex;
+		width: rem(50);
+		height: rem(50);
+		border-radius: 50%;
+		border: rem(1) solid $mainColorLine;
+		cursor: pointer;
+		background: url('@img/icons/rotate-arrow.svg') center no-repeat;		
+	}
+}
+
+//========================================================================================================================================================
+//========================================================================================================================================================

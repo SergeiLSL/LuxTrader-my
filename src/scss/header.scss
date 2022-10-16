@@ -128,7 +128,7 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #bb9c66;
+			background-color: $mainColorLine;
 		}
 		&::before {
 			top: 0;
@@ -162,7 +162,7 @@
 	// .actions-header__region
 	&__region {
 		position: relative;
-		z-index: 2;		
+		z-index: 2;
 		@extend .menu__link; // подключаем все, что есть в .menu__link
 		padding: 0 0 0 rem(30);
 		line-height: rem(18);
@@ -178,8 +178,8 @@
 		}
 		// time 1:15:50 переносим "Выбор региона" в выпадающее меню бургера
 		// Подключаем из app.js Динамический адаптив import "./libs/dynamic_adapt.js";
-		// не хочет переносится 
-		@media (max-width:$mobile){
+		// не хочет переносится
+		@media (max-width: $mobile) {
 			margin-top: rem(30);
 			display: inline-block;
 			padding: 0 0 0 rem(30);
@@ -266,7 +266,7 @@
 	}
 }
 
-// ? Попробовать убрать и в HTML тоже 
+// ? Попробовать убрать и в HTML тоже
 // .webp .actions-header__region{ background: url(@img/icons/globe.webp) left no-repeat; }
 
 // .webp .user-header__link_1{ background: url(@img/icons/menu/01.webp) 1px center no-repeat; }
@@ -288,7 +288,6 @@
 // .webp .form-subscribe__btn span{ background: url(@img/icons/ok-btn.webp) right no-repeat; }
 
 //========================
-
 
 //====================================================================================================
 

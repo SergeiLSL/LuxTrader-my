@@ -2,7 +2,7 @@
 
 //========================================================================================================================================================
 p:not(:last-child) {
-	margin-bottom: rem(15);
+	margin-bottom: rem(10);
 }
 
 // ======================================================================================================================================================================================================================
@@ -13,7 +13,7 @@ p:not(:last-child) {
 	&__item {
 		font-family: "Ceremonious";
 		font-size: rem(40);
-		color: #bb9c66;
+		color: $mainColorLine;
 		// margin: 0 0 math.div(20px, 40px) * 1em 0;
 		margin-bottom: rem(23);
 	}
@@ -95,9 +95,9 @@ p:not(:last-child) {
 				height: rem(50);
 				transition: all 0.5s ease 0s;
 				opacity: 0.06;
-				// background-image: -webkit-gradient(linear, left bottom, left top, from(#bb9c66), to(rgba(187, 156, 102, 0)));
-				// background-image: -o-linear-gradient(bottom, #bb9c66 0%, rgba(187, 156, 102, 0) 100%);
-				background-image: linear-gradient(to top, #bb9c66 0%, rgba(187, 156, 102, 0) 100%);
+				// background-image: -webkit-gradient(linear, left bottom, left top, from($mainColorLine), to(rgba(187, 156, 102, 0)));
+				// background-image: -o-linear-gradient(bottom, $mainColorLine 0%, rgba(187, 156, 102, 0) 100%);
+				background-image: linear-gradient(to top, $mainColorLine 0%, rgba(187, 156, 102, 0) 100%);
 				top: 0;
 				left: 0;
 				position: absolute;
@@ -153,7 +153,7 @@ p:not(:last-child) {
 			height: rem(1);
 			width: 100%;
 			flex: 1 1 auto;
-			background-color: #bb9c66;
+			background-color: $mainColorLine;
 		}
 		&::after {
 			content: "";
@@ -161,7 +161,7 @@ p:not(:last-child) {
 			width: calc(rem(25) * 0.72);
 			flex: 0 0 25px * 0.72;
 			transform: rotate(-45deg);
-			border: rem(1) solid #bb9c66;
+			border: rem(1) solid $mainColorLine;
 			margin: 0 rem(5) 0 rem(5);
 		}
 		span {
@@ -174,7 +174,7 @@ p:not(:last-child) {
 				width: rem(10);
 				flex: 0 0 rem(10);
 				border-radius: 50%;
-				border: rem(1) solid #bb9c66;
+				border: rem(1) solid $mainColorLine;
 				margin: 0 rem(5);
 			}
 			&::after {
@@ -182,7 +182,7 @@ p:not(:last-child) {
 				height: calc(rem(15) * 0.72);
 				width: calc(rem(15) * 0.72);
 				flex: 0 0 15px * 0.72;
-				border: rem(1) solid #bb9c66;
+				border: rem(1) solid $mainColorLine;
 				transform: rotate(-45deg);
 			}
 		}
@@ -222,7 +222,7 @@ p:not(:last-child) {
 	// .lot__image -ibg
 	&__image-ibg {
 		display: block;
-		border: rem(3) solid #bb9c66;
+		border: rem(3) solid $mainColorLine;
 		padding: 0 0 98% 0;
 	}
 	// .lot__timer
@@ -332,7 +332,7 @@ p:not(:last-child) {
 		font-size: rem(14);
 		padding-bottom: rem(5);
 		width: rem(50);
-		border-bottom: rem(1) solid #bb9c66;
+		border-bottom: rem(1) solid $mainColorLine;
 	}
 	// .info-lot__current-bet
 	&__current-bet {
@@ -357,7 +357,7 @@ p:not(:last-child) {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%) rotate(-45deg);
-		border: 1px solid #bb9c66;
+		border: 1px solid $mainColorLine;
 		z-index: -1;
 	}
 	div {
@@ -476,7 +476,7 @@ p:not(:last-child) {
 	}
 	// .service__title
 	&__title {
-		font-family: 'PFDin';
+		font-family: "PFDin";
 		font-size: rem(21);
 		line-height: math.div(25, 21);
 		font-weight: 500;
@@ -489,7 +489,7 @@ p:not(:last-child) {
 	&__text {
 		font-size: rem(15);
 		line-height: math.div(25, 15);
-		color: #bb9c66;
+		color: $mainColorLine;
 		margin-top: rem(23);
 		max-height: rem(50); // для того чтобы колонки были одинаковые по высоте
 		overflow: hidden; // для того чтобы колонки были одинаковые по высоте
@@ -502,7 +502,7 @@ p:not(:last-child) {
 	}
 	// .service__btn
 	&__btn {
-		font-family: 'PFDin';
+		font-family: "PFDin";
 		font-size: rem(21);
 		line-height: math.div(25, 21);
 		font-weight: 500;
@@ -512,17 +512,17 @@ p:not(:last-child) {
 		text-align: center;
 		position: relative;
 		margin-top: rem(30);
-		&::before{
-			content:'';
+		&::before {
+			content: "";
 			position: absolute;
-			background-color: #bb9c66;
+			background-color: $mainColorLine;
 			height: rem(1);
 			width: 100%;
 			top: 50%;
 			left: 0;
 		}
 		span {
-			background-color: #1c242a;
+			background-color: $mainColorBlock;
 			position: relative;
 			z-index: 2;
 			padding: 0 rem(15);
