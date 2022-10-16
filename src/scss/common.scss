@@ -1,7 +1,5 @@
 // Заголовки, общие БЄМ блоки и проче...
-.none {
-	display: none;
-}
+
 
 //========================================================================================================================================================
 p:not(:last-child) {
@@ -223,7 +221,7 @@ p:not(:last-child) {
 		position: relative;
 	}
 	// .lot__image -ibg
-	&__image {
+	&__image-ibg {
 		display: block;
 		border: rem(3) solid #bb9c66;
 		padding: 0 0 98% 0;
@@ -296,7 +294,7 @@ p:not(:last-child) {
 	}
 }
 
-//========================================================================================================================================================
+//===================
 .info-lot {
 	display: flex;
 	justify-content: center;
@@ -387,7 +385,8 @@ p:not(:last-child) {
 // .item из секции categories
 .item {
 	position: relative;
-	padding: rem(30) rem(10) rem(40) rem(10);
+	padding: rem(30) rem(30) rem(40) rem(30);
+	text-align: center;
 	height: rem(250);
 	width: rem(250);
 	border-radius: 50%;
@@ -395,6 +394,16 @@ p:not(:last-child) {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	@media (min-width:$tablet){
+		&:hover {
+			.item__bg-ibg {
+				transform: scale(1.1);
+				&::after {
+					background-color: rgba(0, 0, 0, 0.4);
+				}
+			}
+		}
+	}
 	// .item__link
 	&__link {
 		position: absolute;
@@ -433,7 +442,7 @@ p:not(:last-child) {
 		z-index: 2;
 	}
 	// .item__bg
-	&__bg {
+	&__bg-ibg {
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -447,8 +456,11 @@ p:not(:last-child) {
 			height: 100%;
 			top: 0;
 			left: 0;
-			background-color: rgba(0, 0, 0, 0.7);
+			background-color: rgba(0, 0, 0, 0.6);
 		}
 	}
 }
 //========================================================================================================================================================
+.none {
+	display: none;
+}

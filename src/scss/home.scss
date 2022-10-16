@@ -249,11 +249,47 @@
 	}
 	// .categories__container
 	&__container {
+		overflow: hidden; // чтобы скрыть крайний справа декор
+		position: relative;
+		&::after{ // чтобы скрыть точки снизу контейнера
+			content:'';
+			position: absolute;
+			bottom: 0;
+			height: rem(45);
+			background-color: #fff;
+			width: 100%;
+		}
 	}
 	// .categories__row
 	&__row {
 		display: flex;
 		margin: 0 rem(-50);
+		flex-wrap: wrap;
+		position: relative;		
+		padding-top: rem(32); // из них 2px, чтобы верхние ромбы не подрезало 
+		&::before, // два ромба над лотами, как псевдоэлемент
+		&::after {
+			content:'';
+			position: absolute;
+			top: rem(2); // чтобы верхние ромбы не подрезало
+			width: rem(17.28); // 24 * 0.72
+			height: rem(17.28);
+			flex: 0 0 rem(17.28);
+			transform: translate(-50%, 0) rotate(-45deg);
+			border: rem(1) solid #bb9c66;
+		}
+		&::before{
+			left: 33.333%;
+			@media (max-width:$tablet){
+				left: 50%;
+			}
+		}
+		&::after{
+			left: 66.667%;
+			@media (max-width:$tablet){
+				display: none;
+			}
+		}
 	}
 	// .categories__column
 	&__column {
@@ -261,6 +297,26 @@
 		flex: 0 1 33.333%;
 		margin: 0 0 rem(25) 0;
 		position: relative;
+		display: flex; // выравнивание при 2 и 1 колонки
+		justify-content: center; // выравнивание при 2 и 1 колонки
+		&::before{
+			content:'';
+			background-color: #bb9c66;
+			width: rem(10);
+			height: rem(10);
+			flex: 0 0 rem(10);
+			border-radius: 50%;
+			position: absolute;
+			left: 50%;
+			bottom: rem(-5);
+			transform: translate(-50%, 0);
+		}
+		@media (max-width:$tablet){
+			flex: 0 1 50%; // 2 колонки
+		}
+		@media (max-width:rem(650)){
+			flex: 1 1 100%; // 1 колонка  
+		}
 	}
 	// .categories__item
 	&__item {
@@ -272,12 +328,47 @@
 		top: 0;
 		width: rem(24);
 		transform: translate(50%, 0);
-		height: 100%;
-		&::before,
+		height: calc(100% + rem(10)); // 10px, чтобы выровнять ромб посередине между строк
+		z-index: 5;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&::before {
+			content:'';
+			background-color: #bb9c66;
+			width: rem(1);
+			flex: 1 1 auto;
+		} 
 		&::after{
 			content:'';
-			//position: absolute;
-		} 
+			width: rem(17.28); // 24 * 0.72
+			height: rem(17.28);
+			flex: 0 0 rem(17.28);
+			transform: rotate(-45deg);
+			border: rem(1) solid #bb9c66;
+			margin-top: rem(15);
+		}
+		span {
+			flex: 1 1 auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			&::before{
+				content:'';
+				background-color: #bb9c66;
+				width: rem(10);
+				height: rem(10);
+				flex: 0 0 rem(10);
+				border-radius: 50%;
+				margin: rem(20) 0;
+			}
+			&::after{
+				content:'';
+				background-color: #bb9c66;
+				width: rem(1);
+				flex: 1 1 auto;			
+			}
+		}
 	}
 }
 
