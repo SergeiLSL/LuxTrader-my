@@ -460,6 +460,77 @@ p:not(:last-child) {
 	}
 }
 //========================================================================================================================================================
+//===============
+.service {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%; // для того чтобы колонки были одинаковые по высоте
+	// .service__image
+	&__image {
+		height: rem(205);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: rem(10);
+	}
+	// .service__title
+	&__title {
+		font-family: 'PFDin';
+		font-size: rem(21);
+		line-height: math.div(25, 21);
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 1.1px;
+		color: #ffffff;
+		flex: 1 1 auto; // для того чтобы колонки были одинаковые по высоте
+	}
+	// .service__text
+	&__text {
+		font-size: rem(15);
+		line-height: math.div(25, 15);
+		color: #bb9c66;
+		margin-top: rem(23);
+		max-height: rem(50); // для того чтобы колонки были одинаковые по высоте
+		overflow: hidden; // для того чтобы колонки были одинаковые по высоте
+		// ? Можно использовать как вариант
+		// или добавим 3 строчки и 3 точки
+		// display: -webkit-box;
+		// -webkit-line-clamp: 3;
+		// -webkit-box-orient: vertical;
+		// overflow: hidden;
+	}
+	// .service__btn
+	&__btn {
+		font-family: 'PFDin';
+		font-size: rem(21);
+		line-height: math.div(25, 21);
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #ffffff;
+		text-align: center;
+		position: relative;
+		margin-top: rem(30);
+		&::before{
+			content:'';
+			position: absolute;
+			background-color: #bb9c66;
+			height: rem(1);
+			width: 100%;
+			top: 50%;
+			left: 0;
+		}
+		span {
+			background-color: #1c242a;
+			position: relative;
+			z-index: 2;
+			padding: 0 rem(15);
+		}
+	}
+}
+
+//========================================================================================================================================================
 
 // +++++!!!!!!!!!+++++++++++
 .none {

@@ -244,7 +244,7 @@
 //========================================================================================================================================================
 // section categories
 .categories {
-	@include adaptiveValue("margin-bottom", 77, 50);
+	@include adaptiveValue("margin-bottom", 70, 50);
 	// .categories__items
 	&__items {
 		@include adaptiveValue("margin-bottom", 85, 50);
@@ -409,3 +409,40 @@
 
 //========================================================================================================================================================
 //========================================================================================================================================================
+.services {
+	@include adaptiveValue("padding-top", 60, 40);
+	@include adaptiveValue("padding-bottom", 40, 0);
+
+	background-color: #1c242a;
+	// .services__container
+	&__container {
+	}
+	// .services__header
+	&__header {
+		margin-bottom: rem(40);
+	}
+	// .services__row
+	&__row {
+		margin: 0 rem(-50);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	// .services__column
+	&__column {
+		padding: 0 rem(50);
+		flex: 0 1 33.333%;
+		margin-bottom: rem(60);
+		// max-width: 33.333%; // если нужна кроссбраузерность, для интернет эксплоера
+		@media (max-width:$tablet){
+			flex: 0 1 50%;
+		}
+		@media (max-width: rem(640)){
+			flex: 1 1 100%;
+		}
+
+	}
+	// .services__item
+	&__item {
+	}	
+}
