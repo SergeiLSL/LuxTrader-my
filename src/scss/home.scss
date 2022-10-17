@@ -454,7 +454,7 @@
 	&__container {
 	}
 	// .quotes__slider
-	&__slider {		
+	&__slider {
 	}
 }
 
@@ -476,7 +476,7 @@
 		&.swiper-slide-active {
 			opacity: 1 !important;
 		}
-		@media (max-width: rem(570)){
+		@media (max-width: rem(570)) {
 			flex-direction: column;
 		}
 	}
@@ -490,14 +490,14 @@
 		img {
 			max-width: 100%;
 		}
-		@media (max-width: rem(570)){
+		@media (max-width: rem(570)) {
 			margin-bottom: rem(15);
 		}
 	}
 	// .slider-quotes__content
 	&__content {
 		flex: 0 1 rem(515);
-		@media (max-width: rem(570)){
+		@media (max-width: rem(570)) {
 			flex: 0 0 auto;
 		}
 	}
@@ -506,10 +506,10 @@
 		font-size: rem(25);
 		//@include adaptiveValue("font-size", 25, 20);
 		line-height: math.div(30, 25);
-		font-style: italic;		
+		font-style: italic;
 		//margin-bottom: rem(31);
 		@include adaptiveValue("margin-bottom", 31, 20);
-		@media (max-width: rem(570)){
+		@media (max-width: rem(570)) {
 			padding: 0 rem(20);
 		}
 	}
@@ -520,7 +520,7 @@
 		p:not(:last-child) {
 			margin-bottom: rem(7);
 		}
-		@media (max-width: rem(570)){
+		@media (max-width: rem(570)) {
 			padding: 0 rem(20);
 		}
 	}
@@ -546,8 +546,8 @@
 			height: rem(1);
 			background-color: $mainColorLine;
 		}
-		&::after{
-			content:'';
+		&::after {
+			content: "";
 			margin: 0 0 0 rem(5);
 			width: rem(10);
 			height: rem(10);
@@ -556,8 +556,8 @@
 		}
 		&:last-child {
 			flex-direction: row-reverse;
-			&::after{
-				content:'';
+			&::after {
+				content: "";
 				margin: 0 rem(5) 0 0;
 			}
 		}
@@ -575,9 +575,134 @@
 		border-radius: 50%;
 		border: rem(1) solid $mainColorLine;
 		cursor: pointer;
-		background: url('@img/icons/rotate-arrow.svg') center no-repeat;		
+		background: url("@img/icons/rotate-arrow.svg") center no-repeat;
 	}
 }
 
 //========================================================================================================================================================
 //========================================================================================================================================================
+.info {
+	padding-bottom: rem(75);
+	// .info__container
+	&__container {
+	}
+	// .info__row
+	&__row {
+		display: flex;
+		margin: 0 rem(-22);
+		flex-wrap: wrap;
+	}
+	// .info__column
+	&__column {
+		flex: 0 1 50%;
+		padding: 0 rem(22);
+		margin-bottom: rem(55);
+		&:last-child {
+			margin: 0;
+			flex: 1 1 100%;
+		}
+	}
+	// .info__block
+	&__block {
+	}
+	// .info__title
+	&__title {
+	}
+	// .info__content
+	&__content {
+	}
+	// .info__item
+	&__item {
+		margin-bottom: rem(30);
+	}
+	// .info__date
+	&__date {
+		color: $mainColorLine;
+		font-size: rem(12);
+		margin-bottom: rem(5);
+	}
+	// .info__label
+	&__label {
+		font-size: rem(15);
+		color: #333333;
+		font-weight: 700;
+		text-decoration: underline;
+		display: inline-block;
+		margin-bottom: rem(5);
+	}
+	// .info__text
+	&__text {
+		font-size: rem(12);
+		line-height: math.div(21, 15);
+	}
+	// .info__subscribe
+	&__subscribe {
+	}
+}
+
+.title-info {
+// 	margin-bottom: rem(15);
+}
+
+.subscribe {
+	//display: flex;
+	//margin: 0 rem(-22);
+	// .subscribe__title
+	&__title {
+	}
+	// .subscribe__body
+	&__body {
+		display: flex;
+		margin: 0 rem(-22);
+	}
+	// .subscribe__column
+	&__column {
+		flex: 0 1 50%;
+		padding: 0 rem(22);
+	}
+	// .subscribe__text
+	&__text {
+		font-size: rem(15);
+		line-height: math.div(21, 15);
+	}
+	// .subscribe__form
+	&__form {
+	}
+}
+
+.form-subscribe {
+	height: rem(50);
+	border: rem(3) solid $mainColorLine;
+	background-color: #ffffff;
+	display: flex;
+	// .form-subscribe__input
+	&__input {
+		flex: 1 1 auto;		
+	}
+	// .form-subscribe__btn
+	&__btn {
+		position: relative;
+		flex: 0 0 rem(95);
+		background-color: #fff;
+		&::before{
+			content:'';
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translate(0px, -50%);
+			width: rem(1);
+			height: rem(32);
+			background-color: $mainColorLine;
+		}
+		& span {
+			background: url("@img/icons/ok-btn.png") right no-repeat;
+			padding: 0 rem(32) 0 0;
+			color: $mainColorBlock;
+			font-family: "PFDin";
+			font-size: rem(21);
+			font-weight: 500;
+			text-transform: uppercase;
+			letter-spacing: rem(2.12);
+		}
+	}
+}

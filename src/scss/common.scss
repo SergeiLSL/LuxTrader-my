@@ -531,6 +531,25 @@ p:not(:last-child) {
 }
 
 //========================================================================================================================================================
+.title-info {
+	display: flex;
+	align-items: center;
+	font-size: rem(35);
+	font-family: "PFDin";
+	font-weight: 500;
+	letter-spacing: rem(3.5);
+	text-transform: uppercase;
+	margin-bottom: rem(30);
+	& span:first-child {
+		margin: 0 rem(15) 0 0;
+		& picture {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}
+//========================================================================================================================================================
 
 // +++++!!!!!!!!!+++++++++++
 .none {
