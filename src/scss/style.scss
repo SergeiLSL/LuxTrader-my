@@ -134,7 +134,9 @@ body {
 
 // Подключение стилей общих элементов проекта
 @import "common";
-
+//@import "button";
+//@import "form";
+//@import "input";
 // Подключение стилей отдельных блоков
 @import "header";
 @import "footer";

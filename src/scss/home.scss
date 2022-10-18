@@ -244,10 +244,10 @@
 //========================================================================================================================================================
 // section categories
 .categories {
-	@include adaptiveValue("margin-bottom", 70, 50);
+	@include adaptiveValue("margin-bottom", 70, 0);
 	// .categories__items
 	&__items {
-		@include adaptiveValue("margin-bottom", 85, 50);
+		@include adaptiveValue("margin-bottom", 85, 0);
 	}
 	// .categories__container
 	&__container {
@@ -403,6 +403,13 @@
 			left: rem(0.5);
 			width: rem(85);
 			height: rem(12);
+			@media (max-width: $mobile) {
+				display: none;
+			}
+		}
+		@media (max-width: $mobile) {
+			padding: rem(10) 0 rem(25) 0;
+			background: none;
 		}
 	}
 }
@@ -450,6 +457,9 @@
 //========================================================================================================================================================
 .quotes {
 	padding: rem(64) 0 rem(70) 0;
+	@media (max-width: $mobile) {
+		padding: rem(35) 0 rem(35) 0;
+	}
 	// .quotes__container
 	&__container {
 	}
@@ -458,10 +468,12 @@
 	}
 }
 
-.slider-quotes {
+.slider-quotes {	
 	// .slider-quotes__slider
 	&__slider {
-		margin-bottom: rem(20);
+		@media (max-width: rem(570)) {
+			margin: 0 0 rem(30) 0;
+		}
 	}
 	// .slider-quotes__wrapper
 	&__wrapper {
@@ -477,7 +489,7 @@
 			opacity: 1 !important;
 		}
 		@media (max-width: rem(570)) {
-			flex-direction: column;
+			display: block;
 		}
 	}
 	// .slider-quotes__image
@@ -583,6 +595,7 @@
 //========================================================================================================================================================
 .info {
 	padding-bottom: rem(75);
+	@include adaptiveValue("padding-bottom", 75, 30);
 	// .info__container
 	&__container {
 	}
@@ -591,6 +604,9 @@
 		display: flex;
 		margin: 0 rem(-22);
 		flex-wrap: wrap;
+		@media (max-width: $mobile) {
+			display: block;
+		}
 	}
 	// .info__column
 	&__column {
@@ -600,6 +616,9 @@
 		&:last-child {
 			margin: 0;
 			flex: 1 1 100%;
+		}
+		@media (max-width: $mobile) {
+			margin-bottom: rem(20);
 		}
 	}
 	// .info__block
@@ -614,6 +633,9 @@
 	// .info__item
 	&__item {
 		margin-bottom: rem(30);
+		@media (max-width: $mobile) {
+			margin-bottom: rem(20);
+		}
 	}
 	// .info__date
 	&__date {
@@ -632,7 +654,7 @@
 	}
 	// .info__text
 	&__text {
-		font-size: rem(12);
+		font-size: rem(15);
 		line-height: math.div(21, 15);
 	}
 	// .info__subscribe
@@ -641,7 +663,7 @@
 }
 
 .title-info {
-// 	margin-bottom: rem(15);
+	// в файле common.scss
 }
 
 .subscribe {
@@ -654,6 +676,9 @@
 	&__body {
 		display: flex;
 		margin: 0 rem(-22);
+		@media (max-width: $mobile) {
+			display: block;
+		}
 	}
 	// .subscribe__column
 	&__column {
@@ -664,6 +689,9 @@
 	&__text {
 		font-size: rem(15);
 		line-height: math.div(21, 15);
+		@media (max-width: $mobile) {
+			margin-bottom: rem(20);
+		}
 	}
 	// .subscribe__form
 	&__form {
@@ -677,15 +705,15 @@
 	display: flex;
 	// .form-subscribe__input
 	&__input {
-		flex: 1 1 auto;		
+		flex: 1 1 auto;
 	}
 	// .form-subscribe__btn
-	&__btn {
+	&__button {
 		position: relative;
 		flex: 0 0 rem(95);
 		background-color: #fff;
-		&::before{
-			content:'';
+		&::before {
+			content: "";
 			position: absolute;
 			left: 0;
 			top: 50%;

@@ -39,6 +39,9 @@ textarea {
 	font-family: $fontFamily;
 	font-size: inherit;
 }
+input::-ms-clear {
+	display: none;
+}
 button {
 	cursor: pointer;
 	color: inherit;

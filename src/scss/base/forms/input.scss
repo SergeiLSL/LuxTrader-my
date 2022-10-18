@@ -11,12 +11,18 @@ textarea {
 .input {
 	border-radius: 0 !important;
 	width: 100%;
+	color: #4f4f4f;
+	font-size: rem(15);
+	height: 100%;
 	display: block;
-	padding: 0px 20px;
-	border: 1px solid #eee;
+	padding: 0 rem(25);
+	//border: 1px solid #eee;
 	&._form-focus {
+		color: #000;
 	}
 	&._form-error {
+		color: red;
+		margin-bottom: rem(10);
 	}
 }
 textarea.input {
