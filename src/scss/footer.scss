@@ -1,3 +1,115 @@
 //====================================================================================================
+.footer {
+	padding: rem(45) 0;
+	@include adaptiveValue("padding-top", 45, 35);
+	@include adaptiveValue("padding-bottom", 45, 30);
+	background-color: $mainColorBlock;
+	// .footer__container
+	&__container {
+		display: flex;
+		@media (max-width:$mobile){
+			display: block; 
+			text-align: center;
+		}
+	}
+	// .footer__column
+	&__column {
+		&:first-child {
+			flex: 0 0 rem(180);
+		}
+		// .footer__column_full
+		&_full {
+			flex: 1 1 auto;
+		}
+	}
+	// .footer__logo
+	&__logo {
+		display: inline-block;
+		margin-bottom: rem(25);
+		@media (max-width:$mobile){
+			margin: 0; 
+		}
+	}
+	// .footer__info
+	&__info {
+		color: $mainColorLine;
+		@media (max-width:$mobile){
+			margin: rem(25) 0 0 0; 
+		}
+	}
+	// .footer__menu
+	&__menu {
+		padding: 0 rem(20);
+		@media (max-width:$mobile){
+			padding: 0 rem(15); 
+			margin: 0 0 rem(20) 0;
+		}
+	}
+	// .footer__list
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		& li {
+			margin: rem(15) rem(15) 0 0;
+		}
+		@media (max-width:$mobile){
+			justify-content: center;
+			margin: rem(15) rem(7) 0 rem(7); 
+		}
+	}
+	// .footer__link
+	&__link {
+		font-family: "PFDin";
+		font-size: rem(14);
+		font-weight: 500;
+		color: #fff;
+		text-transform: uppercase;
+		letter-spacing: rem(1.4);
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	// .footer__contacts
+	&__contacts {
+		padding-top: rem(12);
+		text-align: right;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		@media (max-width:$mobile){
+			align-items: center; 
+		}
+	}
+	// .footer__phone
+	&__phone {
+		white-space: nowrap;
+		display: flex;
+		align-items: flex-start;
+		color: $mainColorLine;
+		font-family: "BravoRGRegular";
+		font-size: rem(50);
+		@include adaptiveValue("font-size", 50, 35);
+		text-transform: uppercase;
+		& small {
+			margin: rem(2) rem(5) 0 0;
+			font-size: rem(25);
+			@media (max-width:$tablet){
+				font-size: rem(20);
+			}
+		}
+	}
+	// .footer__callback
+	&__callback {
+		color: $mainColorLine;
+		background: url("@img/icons/callback.svg") left no-repeat;
+		padding: 0 0 0 rem(12);
+		& span {
+			border-bottom: 1px dashed;
+		}
+		@media (max-width:$mobile){
+			margin-top: rem(5);
+		}
+	}
+}
 
 //====================================================================================================
