@@ -145,6 +145,7 @@
 .lots {
 	padding: rem(85) 0 rem(63) 0;
 	@include adaptiveValue("padding-top", 85, 60);
+
 	// .lots__container
 	&__container {
 	}
@@ -420,7 +421,6 @@
 .services {
 	@include adaptiveValue("padding-top", 60, 40);
 	@include adaptiveValue("padding-bottom", 40, 0);
-
 	background-color: $mainColorBlock;
 	// .services__container
 	&__container {
@@ -457,7 +457,7 @@
 //========================================================================================================================================================
 //========================================================================================================================================================
 .quotes {
-	padding: rem(64) 0 rem(70) 0;
+	padding: rem(64) 0 rem(70) 0;	
 	@media (max-width: $mobile) {
 		padding: rem(35) 0 rem(35) 0;
 	}
@@ -596,8 +596,9 @@
 //========================================================================================================================================================
 //========================================================================================================================================================
 .info {
+	padding-top: rem(50);
 	padding-bottom: rem(75);
-	@include adaptiveValue("padding-bottom", 75, 30);
+	//@include adaptiveValue("padding-bottom", 75, 30);
 	// .info__container
 	&__container {
 	}
@@ -616,7 +617,6 @@
 		padding: 0 rem(22);
 		margin-bottom: rem(55);
 		&:last-child {
-			margin: 0;
 			flex: 1 1 100%;
 		}
 		@media (max-width: $mobile) {
