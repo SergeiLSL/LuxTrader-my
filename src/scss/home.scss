@@ -407,6 +407,7 @@
 			height: rem(12);
 			@media (max-width: $mobile) {
 				display: none;
+				background: none;
 			}
 		}
 		@media (max-width: $mobile) {
