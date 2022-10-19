@@ -406,13 +406,12 @@
 			width: rem(85);
 			height: rem(12);
 			@media (max-width: $mobile) {
-				display: none;
-				background: none;
+				display: none;	
 			}
 		}
 		@media (max-width: $mobile) {
 			padding: rem(10) 0 rem(25) 0;
-			background: none;
+			background: none !important;			
 		}
 	}
 }
