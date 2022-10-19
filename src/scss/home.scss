@@ -473,7 +473,7 @@
 	// .slider-quotes__slider
 	&__slider {
 		@media (max-width: rem(570)) {
-			margin: 0 0 rem(30) 0;
+			margin: 0 0 rem(20) 0;
 		}
 	}
 	// .slider-quotes__wrapper
@@ -499,12 +499,12 @@
 		justify-content: center;
 		align-items: center;
 		padding: 0 rem(20);
-		flex: 0 0 33.684%; // 320px / 950px
+		flex: 0 0 33.68421%; // 320px / 950px
 		img {
 			max-width: 100%;
 		}
 		@media (max-width: rem(570)) {
-			margin-bottom: rem(15);
+			// margin-bottom: rem(15);
 		}
 	}
 	// .slider-quotes__content
@@ -512,6 +512,7 @@
 		flex: 0 1 rem(515);
 		@media (max-width: rem(570)) {
 			flex: 0 0 auto;
+			padding-bottom: rem(5);
 		}
 	}
 	// .slider-quotes__title
@@ -520,8 +521,8 @@
 		//@include adaptiveValue("font-size", 25, 20);
 		line-height: math.div(30, 25);
 		font-style: italic;
-		//margin-bottom: rem(31);
-		@include adaptiveValue("margin-bottom", 31, 20);
+		margin: 0 0 1.2em 0;
+		// @include adaptiveValue("margin-bottom", 31, 20);
 		@media (max-width: rem(570)) {
 			padding: 0 rem(20);
 		}
