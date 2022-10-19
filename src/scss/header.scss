@@ -1,7 +1,10 @@
 //====================================================================================================
 .header {
 	background-color: $mainColorBlock;
-	position: relative;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
 	z-index: 50;
 	// .header__container
 	&__container {
